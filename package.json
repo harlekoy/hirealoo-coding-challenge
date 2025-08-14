@@ -10,9 +10,21 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@vueuse/nuxt": "13.6.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.539.0",
     "nuxt": "^4.0.3",
+    "shadcn-nuxt": "2.2.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.6",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
-  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
 }
