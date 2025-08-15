@@ -21,9 +21,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import ServiceFrequency from '~/components/ServiceFrequency.vue'
-
 const scheduleConfig = ref('')
 
 const handleScheduleUpdate = (newConfig: string) => {

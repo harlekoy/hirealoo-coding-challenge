@@ -1,12 +1,12 @@
 # Hirealoo Coding Challenge - Portable Toilet Service Scheduler
 
-This project demonstrates a Vue 3 component for configuring portable toilet service frequencies using Shadcn-nuxt components.
+This project demonstrates a Vue 3 component for configuring portable toilet service frequencies using Shadcn-nuxt components, built with Nuxt 4.
 
 ## Features
 
 The `ServiceFrequency` component provides:
 
-- **Predefined Frequencies**: Weekly, Fortnightly (default), Every 4 weeks, None (disabled)
+- **Predefined Frequencies**: Weekly, Fortnightly (every 2 weeks), Every 4 weeks, None (disabled)
 - **Custom Scheduling**: Day selection, time windows, and exact time specification
 - **Time Management**: 15-minute increment time selection using dropdowns
 - **Mutual Exclusivity**: Time windows and exact time cannot be selected simultaneously
@@ -92,10 +92,11 @@ yarn build
 ```
 
 ### Tech Stack
-- **Framework**: Nuxt 3 with Vue 3 Composition API
+- **Framework**: Nuxt 4 with Vue 3 Composition API
 - **UI Components**: Shadcn-nuxt
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS v4
 - **Language**: TypeScript
+- **Package Manager**: Yarn
 
 ## Project Structure
 
@@ -104,13 +105,21 @@ app/
 ├── components/
 │   ├── ServiceFrequency.vue    # Main component
 │   └── ui/                     # Shadcn components
+│       ├── button/             # Button components
+│       ├── card/               # Card components
+│       ├── checkbox/           # Checkbox components
+│       ├── label/              # Label components
+│       ├── radio-group/        # Radio group components
+│       └── select/             # Select components
 ├── lib/
 │   └── timeUtils.ts           # Time-related utilities and constants
 ├── pages/
 │   └── index.vue              # Demo page
-└── assets/
-    └── css/
-        └── tailwind.css       # Tailwind styles
+├── assets/
+│   └── css/
+│       └── tailwind.css       # Tailwind styles
+└── plugins/
+    └── ssr-width.ts           # SSR width plugin
 ```
 
 ## Utilities
@@ -121,7 +130,7 @@ Located in `app/lib/timeUtils.ts`, this utility file provides:
 
 - **timeOptions**: Array of time slots in 15-minute intervals (00:00 to 23:45)
 - **dayOptions**: Array of full weekday names
-- **frequencyOptions**: Array of frequency choices
+- **frequencyOptions**: Array of frequency choices (Daily, Weekly, Monthly, Custom)
 - **formatTime()**: Converts 24-hour format to 12-hour format with AM/PM
 - **getTimeOptionsInRange()**: Returns time options within a specified range
 - **isValidTimeFormat()**: Validates time format strings
@@ -134,3 +143,16 @@ Located in `app/lib/timeUtils.ts`, this utility file provides:
 4. Test different frequency options and custom configurations
 
 The component will automatically update the JSON output as you make selections, demonstrating how the data would be sent to your backend controller.
+
+## Available UI Components
+
+The project includes a comprehensive set of Shadcn-nuxt components:
+
+- **Button**: Various button styles and variants
+- **Card**: Card layout components with header, content, footer, and actions
+- **Checkbox**: Checkbox input components
+- **Label**: Form label components
+- **Radio Group**: Radio button group components
+- **Select**: Dropdown select components with search and scrolling
+
+All components are fully typed with TypeScript and follow Shadcn design principles for consistency and accessibility.
